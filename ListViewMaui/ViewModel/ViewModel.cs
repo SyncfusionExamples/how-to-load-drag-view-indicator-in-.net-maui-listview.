@@ -8,14 +8,11 @@ using System.Threading.Tasks;
 
 namespace ListViewMaui
 {
-    public class ViewModel : INotifyPropertyChanged
+    public class ViewModel 
     {
         #region Fields
 
         private ObservableCollection<ToDoItem> toDoList;
-
-        private Command<object> markDoneCommand;
-        private bool isVisible;
 
         #endregion
 
@@ -39,18 +36,7 @@ namespace ListViewMaui
 
         public Command<object> MarkDoneCommand
         {
-            get
-            {
-                return markDoneCommand;
-            }
-            set
-            {
-                if (markDoneCommand != value)
-                {
-                    markDoneCommand = value;
-                    OnPropertyChanged("MarkDoneCommand");
-                }
-            }
+            get; set;
         }
 
         public ObservableCollection<ToDoItem> ToDoList
@@ -65,19 +51,6 @@ namespace ListViewMaui
             }
         }
 
-        public bool IsVisible
-        {
-            get
-            {
-                return isVisible;
-            }
-            set
-            {
-                isVisible = value;
-                OnPropertyChanged("IsVisible");
-            }
-        }
-
         #endregion
 
         #region Method
@@ -86,14 +59,6 @@ namespace ListViewMaui
         {
             ToDoListRepository todoRepository = new ToDoListRepository();
             toDoList = todoRepository.GetToDoList();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged(string name)
-        {
-            if (this.PropertyChanged != null)
-                this.PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
 
         #endregion
