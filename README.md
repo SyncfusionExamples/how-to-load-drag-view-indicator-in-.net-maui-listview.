@@ -3,7 +3,7 @@
 This example demonstrates about how to load drag view indicator in .NET MAUI ListView(SfListView).
 
 ```
-xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+<ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              xmlns:data="clr-namespace:Syncfusion.Maui.DataSource;assembly=Syncfusion.Maui.DataSource"
              xmlns:local="clr-namespace:ListViewMaui;assembly=ListViewMaui"
              x:Class="ListViewMaui.MainPage">
@@ -27,6 +27,7 @@ xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Mau
             </syncfusion:SfListView.ItemTemplate>
         </syncfusion:SfListView>
     </Grid>
+</ContentPage>
 ```
 
 ## Requirements to run the demo
